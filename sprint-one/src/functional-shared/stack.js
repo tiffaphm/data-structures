@@ -18,3 +18,7 @@ stackMethods.size = function() {
 stackMethods.push = function() {
   this.count++;
 };
+
+stackMethods.pop = function() {
+  this.count--;
+};
