@@ -14,3 +14,7 @@ var stackMethods = {};
 stackMethods.size = function() {
   return this.count;
 };
+
+stackMethods.push = function() {
+  this.count++;
+};
