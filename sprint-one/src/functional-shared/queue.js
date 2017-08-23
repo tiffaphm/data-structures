@@ -13,6 +13,9 @@ var Queue = function() {
 var queueMethods = {};
 
 queueMethods.size = function() {
+  if (this.count < 0) {
+    return 0;
+  }
   return this.count;
 };
 
