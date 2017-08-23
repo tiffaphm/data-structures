@@ -19,10 +19,16 @@ queueMethods.size = function() {
   return this.count;
 };
 
-queueMethods.enqueue = function() {
+queueMethods.enqueue = function(value) {
   this.count++;
+  this.storage[this.count] = value;
 };
 
 queueMethods.dequeue = function() {
   this.count--;
+  var dequeueKey = this.storage[1];
+  for (var i = 1; i <= this.count; i++) {
+    this.storage[i] = this.storage[i + 1];
+  }
+  return dequeueKey;
 };
