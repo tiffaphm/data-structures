@@ -46,3 +46,18 @@ var Node = function(value) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+// complexity of var LinkedList
+//   O(1)
+
+// complexity of list.addToTail
+//   O(1)
+
+// complexity of list.removeHead
+//   O(1)
+
+// complexity of list.contains
+//   O(n)
+
+// complexity of Node()
+//   O(1)
