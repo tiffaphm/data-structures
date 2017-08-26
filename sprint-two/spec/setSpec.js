@@ -23,5 +23,11 @@ describe('set', function() {
     set.remove('Mel Gibson');
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
+  
+  it('should not contain duplicate properties', function() {
+    set.add('Isla Fisher');
+    set.add('Isla Fisher');
+    expect(Object.keys(set.storage).length === 1).to.equal(true);
+  });
 
 });

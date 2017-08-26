@@ -27,6 +27,12 @@ describe('graph', function() {
     expect(graph.contains(2)).to.equal(false);
   });
 
+  it('should allow graph to be disconnected', function () {
+    graph.addNode(2);
+    graph.addNode(3);
+    expect(graph.edges.length === 0).to.equal(true);
+  });
+
   it('should create edges between two nodes', function() {
     graph.addNode(2);
     graph.addNode(1);

@@ -76,7 +76,7 @@ Graph.prototype.forEachNode = function(cb) {
  
  // .contains => O(n)
  
- // .removeNode => O(n^3)
+ // .removeNode => O(n^2)
  
  // .hasEdge => O(n^2)
  

@@ -21,6 +21,11 @@ describe('tree', function() {
     expect(tree.contains(5)).to.equal(true);
   });
 
+  it('should return true if tree has children', function() {
+    tree.addChild(5);
+    expect(tree.children.length > 0).to.equal(true);  
+  });
+
   it('should return false for a value that was not added', function() {
     tree.addChild(5);
     expect(tree.contains(6)).to.equal(false);

@@ -19,11 +19,11 @@ treeMethods.contains = function(target) {
 
   var testChildren = function(child) {
     if (child.length > 0) {
-      for (var i = 0; i < child.length; i++) {
+      for (var i = 0; i < child.length; i++) { // linear
         if (child[i].value === target) {
           result = true;
         } else {
-          testChildren(child[i].children);
+          testChildren(child[i].children); // linear
         }
       }
     }
@@ -38,8 +38,8 @@ treeMethods.contains = function(target) {
  * Complexity: What is the time complexity of the above functions?
  */
 
-COMPLEXITIES
+// COMPLEXITIES
 
-.addChild => O(1)
+// .addChild => O(1)
 
-.contains => 
+// .contains => O(n)
