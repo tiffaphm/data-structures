@@ -24,8 +24,7 @@ BinarySearchTree.prototype.contains = function(value) {
   // INPUT: value
   // OUTPUT: boolean, true false
   var result = false;
-  // console.log(this);
-  // debugger;
+
   var checkCurrent = function(node) {
     if (node !== null) {
       if (value === node.value) {
@@ -43,7 +42,23 @@ BinarySearchTree.prototype.contains = function(value) {
   return result;
 };
 
-BinarySearchTree.prototype.depthFirstLog = function() {
+BinarySearchTree.prototype.depthFirstLog = function(iterator) {
+  //INPUT: iterator, function
+  //OUTPUT: calls iterator for each item in BST
+  
+  var lookThrough = function(BST) {
+    BST.value = iterator(BST.value);
+    
+    if (BST.right !== null) {
+      lookThrough(BST.right);
+    }
+    
+    if (BST.left !== null) {
+      lookThrough(BST.left);
+    }
+  };
+  
+  lookThrough(this);
   
 };
 
@@ -51,8 +66,10 @@ BinarySearchTree.prototype.depthFirstLog = function() {
  * Complexity: What is the time complexity of the above functions?
  */
 
-// var BST = new BinarySearchTree(10);
-// console.log(BST);
-// BST.insert(11);
-// console.log(BST);
-// // BST(10);
+// COMPLEXITIES
+
+// .insert => O(log(n))
+
+// .contains => O(log(n))
+
+// .depthFirstLog => O(n)
