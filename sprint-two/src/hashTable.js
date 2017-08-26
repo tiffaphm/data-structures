@@ -6,7 +6,7 @@ var HashTable = function() {
 };
 
 HashTable.prototype.insert = function(k, v) {
-  var index = getIndexBelowMaxForKey(k, this._limit);
+  var index = getIndexBelowMaxForKey(k, this._limit); // constant
   // INPUT: key, value pair
   // OUTPUT: none
   // constraints: none
@@ -15,17 +15,17 @@ HashTable.prototype.insert = function(k, v) {
     //create an empty bucket to hold key value pairs
     
   // push [k, v] to the array bucket at the hashtable index
-  if (this._storage[index] === undefined) {
+  if (this._storage[index] === undefined) { //constant
     this._storage[index] = [];
   } 
   
-  this._storage[index].push([k, v]);
+  this._storage[index].push([k, v]);//constant
   
   
 };
 
 HashTable.prototype.retrieve = function(k) {
-  var index = getIndexBelowMaxForKey(k, this._limit);
+  var index = getIndexBelowMaxForKey(k, this._limit); // constant
   
   // INPUT: key
   // OUTPUT: value
@@ -35,7 +35,7 @@ HashTable.prototype.retrieve = function(k) {
       // if it does, return the value
   var val;
   
-  _.each(this._storage[index], function(tuple) {
+  _.each(this._storage[index], function(tuple) { //linear
     if (tuple[0] === k) {
       val = tuple[1];
     }
@@ -58,4 +58,9 @@ HashTable.prototype.remove = function(k) {
  * Complexity: What is the time complexity of the above functions?
  */
 
+.insert => O(1)
+
+.retrieve => O(n)
+
+.remove =>
 

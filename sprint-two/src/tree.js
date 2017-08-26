@@ -15,16 +15,6 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  // input: target, value
-  // output: true/false
-  // constraints: childrenArray.length > 0
-  
-  // if (children.length > 0)
-  // iterate through the children array
-    // check for value === target
-      // return true
-    // else
-      // redo the function(children)
   var result = false;
 
   var testChildren = function(child) {
@@ -44,13 +34,12 @@ treeMethods.contains = function(target) {
   return result;
 };
 
-      // if (child[0].value === target) {
-      //   return true;
-      // } else {
-      //   console.log(child[0].children);
-      //   return testChildren(child[0].children);
-      // }
-
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+COMPLEXITIES
+
+.addChild => O(1)
+
+.contains => 

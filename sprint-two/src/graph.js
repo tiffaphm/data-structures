@@ -23,12 +23,12 @@ Graph.prototype.contains = function(node) {
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
-  var index = this.vertices.indexOf(node);
+  var index = this.vertices.indexOf(node); // linear time
   if (index >= 0) {
-    this.vertices.splice(index, 1);
-    for (var i = 0; i < this.edges.length; i++) {
-      if (_.contains(this.edges[i], node)) {
-        this.edges.splice(this.edges[i], 1);
+    this.vertices.splice(index, 1); // linear
+    for (var i = 0; i < this.edges.length; i++) { // linear
+      if (_.contains(this.edges[i], node)) { //linear
+        this.edges.splice(this.edges[i], 1); // linear
       }
     }
   }
@@ -39,8 +39,8 @@ Graph.prototype.removeNode = function(node) {
 Graph.prototype.hasEdge = function(fromNode, toNode) {
   var bool = false;
   
-  for (var i = 0; i < this.edges.length; i++) {
-    if (_.contains(this.edges[i], fromNode) && _.contains(this.edges[i], toNode)) {
+  for (var i = 0; i < this.edges.length; i++) { // linear
+    if (_.contains(this.edges[i], fromNode) && _.contains(this.edges[i], toNode)) { // linear + linear
       bool = true;
     }
   }
@@ -54,9 +54,9 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
-  for (var i = 0; i < this.edges.length; i++) {
-    if (_.contains(this.edges[i], fromNode) && _.contains(this.edges[i], toNode)) {
-      this.edges.splice(this.edges[i], 1);
+  for (var i = 0; i < this.edges.length; i++) { //linear
+    if (_.contains(this.edges[i], fromNode) && _.contains(this.edges[i], toNode)) { // linear + linear
+      this.edges.splice(this.edges[i], 1); //linear
     }
   }
 };
@@ -69,3 +69,19 @@ Graph.prototype.forEachNode = function(cb) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+ 
+ // COMPLEXITIES:
+ 
+ // .addNode => O(1)
+ 
+ // .contains => O(n)
+ 
+ // .removeNode => O(n^3)
+ 
+ // .hasEdge => O(n^2)
+ 
+ // .addEdge => O(1)
+ 
+ // .removeEdge => O(n^2)
+ 
+ // .forEachNode => O(n)
