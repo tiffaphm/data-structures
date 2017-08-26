@@ -15,23 +15,17 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  var result = false;
-
-  var testChildren = function(child) {
-    if (child.length > 0) {
-      for (var i = 0; i < child.length; i++) { // linear
-        if (child[i].value === target) {
-          result = true;
-        } else {
-          testChildren(child[i].children); // linear
-        }
-      }
-    }
-  };
+  if (this.value === target) {
+    return true;
+  }
   
-  testChildren(this.children);
+  for (var i = 0; i < this.children.length; i++) {
+    if (this.children[i].contains(target)) {
+      return true;
+    } 
+  }
   
-  return result;
+  return false;
 };
 
 /*
@@ -43,3 +37,21 @@ treeMethods.contains = function(target) {
 // .addChild => O(1)
 
 // .contains => O(n)
+
+  // var result = false;
+
+  // var testChildren = function(child) {
+  //   if (child.length > 0) {
+  //     for (var i = 0; i < child.length; i++) { // linear
+  //       if (child[i].value === target) {
+  //         result = true;
+  //       } else {
+  //         testChildren(child[i].children); // linear
+  //       }
+  //     }
+  //   }
+  // };
+  
+  // testChildren(this.children);
+  
+  // return result;

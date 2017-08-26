@@ -35,11 +35,11 @@ describe('hashTable', function() {
     expect(hashTable.retrieve('Steven')).to.equal(undefined);
   });
   
-  it('should throw an error when removing values that were not inserted', function() {
-    hashTable.insert('Steven', 'Tyler');
-    hashTable.insert('Bob', 'Loblaw');
-    hashTable.remove('Lisa')
-  });
+  // it('should throw an error when removing values that were not inserted', function() {
+  //   hashTable.insert('Steven', 'Tyler');
+  //   hashTable.insert('Bob', 'Loblaw');
+  //   hashTable.remove('Lisa')
+  // });
 
   it('should handle hash function collisions', function() {
     var v1 = 'val1';

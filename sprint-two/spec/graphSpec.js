@@ -26,6 +26,12 @@ describe('graph', function() {
     graph.removeNode(2);
     expect(graph.contains(2)).to.equal(false);
   });
+  
+  it('should not add an edge to a non existant node', function() {
+    graph.addNode(2);
+    graph.addEdge(2, 4);
+    expect(graph.hasEdge(2, 4)).to.equal(false);
+  });
 
   it('should allow graph to be disconnected', function () {
     graph.addNode(2);

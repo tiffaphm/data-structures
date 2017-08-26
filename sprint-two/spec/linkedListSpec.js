@@ -22,6 +22,10 @@ describe('linkedList', function() {
     linkedList.addToTail(5);
     expect(linkedList.tail.value).to.equal(5);
   });
+  
+  it('should not remove head if head does not exist', function () {
+    expect(linkedList.removeHead()).to.equal(null);
+  });
 
   it('should remove the head from the list when removeHead is called', function() {
     linkedList.addToTail(4);
